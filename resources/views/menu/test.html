@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Dashboard</title>
+    <!-- CDN Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Sidebar -->
+    <div class="flex min-h-screen">
+        <div class="bg-gray-800 text-gray-200 w-64 space-y-6 py-7 px-2">
+            <!-- Branding -->
+            <div class="text-white text-3xl font-bold text-center">
+                Admin Panel
+            </div>
+
+            <!-- Navigation Links -->
+            <nav>
+                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
+                    Dashboard
+                </a>
+                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
+                    Users
+                </a>
+                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
+                    Products
+                </a>
+                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
+                    Orders
+                </a>
+                <a href="profile" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
+                    Settings
+                </a>
+                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
+                    Logout
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-10">
+            <h1 class="text-3xl font-bold mb-6">Admin Dashboard</h1>
+
+            <!-- Statistics Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold">1,234</h2>
+                            <p class="text-gray-600">Total Users</p>
+                        </div>
+                        <div>
+                            <i class="text-gray-400 fa-solid fa-users fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold">{{ $todayCustomers }}</h2>
+                            <p class="text-gray-600">Total penjualan hari ini</p>
+                        </div>
+                        <div>
+                            <i class="text-gray-400 fa-solid fa-boxes-stacked fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold">{{$totalCustomers}}</h2>
+                            <p class="text-gray-600">Orders total</p>
+                        </div>
+                        <div>
+                            <i class="text-gray-400 fa-solid fa-shopping-cart fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold">$12,345</h2>
+                            <p class="text-gray-600">Revenue</p>
+                        </div>
+                        <div>
+                            <i class="text-gray-400 fa-solid fa-dollar-sign fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table Section -->
+            <div class="mt-8 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">Recent Orders</h2>
+                <table class="min-w-full bg-white border">
+                    <thead class="bg-gray-200">
+                        <tr>
+                            <th class="py-2 px-4 border">Order ID</th>
+                            <th class="py-2 px-4 border">Customer</th>
+                            <th class="py-2 px-4 border">Status</th>
+                            <th class="py-2 px-4 border">Total</th>
+                            <th class="py-2 px-4 border">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-2 px-4 border">#12345</td>
+                            <td class="py-2 px-4 border">John Doe</td>
+                            <td class="py-2 px-4 border">Pending</td>
+                            <td class="py-2 px-4 border">$100</td>
+                            <td class="py-2 px-4 border text-center">
+                                <button class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border">#12346</td>
+                            <td class="py-2 px-4 border">Jane Smith</td>
+                            <td class="py-2 px-4 border">Completed</td>
+                            <td class="py-2 px-4 border">$250</td>
+                            <td class="py-2 px-4 border text-center">
+                                <button class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border">#12347</td>
+                            <td class="py-2 px-4 border">Sarah Lee</td>
+                            <td class="py-2 px-4 border">Shipped</td>
+                            <td class="py-2 px-4 border">$80</td>
+                            <td class="py-2 px-4 border text-center">
+                                <button class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
